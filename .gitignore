@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Virtual Environment
+venv/
+.env
+.venv/
+
+# VS Code
+.vscode/
+
+# Model files
+*.pkl
+*.joblib
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Large raw data
+data/raw/*
+!data/raw/.gitkeep
+
+# Generated outputs
+reports/figures/*
+reports/tables/*
+
+# Operating System
+Thumbs.db
+.DS_Store
+
+# Google Colab
+*.tmp
+
+# Cache
+.cache/
+
+# Python cache
+.pytest_cache/

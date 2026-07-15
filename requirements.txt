@@ -1,0 +1,16 @@
+pandas
+numpy
+matplotlib
+plotly
+scikit-learn
+statsmodels
+scipy
+pymc
+arviz
+geopandas
+shapely
+jupyter
+notebook
+openpyxl
+xlrd
+xlsxwriter
