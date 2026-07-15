@@ -6,89 +6,93 @@
 
 ## 📌 Project Overview
 
-Food Security Early Warning System (EWS-Jatim) is a web-based decision support system designed to provide early warnings regarding rice production and food security conditions across districts/cities in East Java, Indonesia.
+The **Food Security Early Warning System for East Java (EWS-Jatim)** is a web-based decision support system developed to provide early warnings regarding rice production and regional food security across **38 districts/cities** in East Java, Indonesia.
 
-The system integrates historical agricultural production data with environmental variables to forecast future rice production and estimate food security conditions using the **Food Security Ratio (FSR)**.
+The system integrates historical rice production data with environmental variables derived from Earth Observation (EO) datasets to forecast future rice production and estimate regional food security conditions using the **Food Security Ratio (FSR)**.
 
-This project combines statistical forecasting, Bayesian hierarchical modeling, interactive visualization, and geospatial analysis into one integrated platform that can support government agencies and stakeholders in monitoring regional food security.
+This project combines **time series forecasting**, **Bayesian hierarchical modeling**, **geospatial visualization**, and **interactive dashboards** into a single platform that supports evidence-based decision making for government agencies, researchers, and other stakeholders in the agricultural sector.
 
 ---
 
-## 🎯 Objectives
+## 🎯 Project Objectives
 
-The main objectives of this project are:
+The primary objectives of this project are to:
 
-- Forecast monthly rice production for every district/city in East Java.
-- Compare forecasting performance between SARIMAX and Hierarchical Bayesian Time Series (HBTS).
-- Develop an Early Warning System (EWS) for food security.
-- Visualize forecasting results through an interactive dashboard.
-- Assist policymakers in identifying areas with potential food insecurity.
+* Forecast monthly rice production for each district/city in East Java.
+* Compare the forecasting performance of **SARIMAX** and **Hierarchical Bayesian Time Series (HBTS)** models.
+* Develop an Early Warning System (EWS) for regional food security monitoring.
+* Estimate rice availability, demand, and Food Security Ratio (FSR).
+* Visualize forecasting results through an interactive web dashboard.
+* Support policymakers in identifying districts with potential food insecurity.
 
 ---
 
 # 🚀 Key Features
 
-### 📈 Rice Production Forecast
+## 📈 Rice Production Forecasting
 
-Forecast monthly rice production using:
+Forecast monthly rice production using two complementary approaches:
 
-- SARIMAX
-- Hierarchical Bayesian Time Series (HBTS)
+* **SARIMAX (Seasonal ARIMA with Exogenous Variables)**
+* **Hierarchical Bayesian Time Series (HBTS)**
 
 ---
 
-### 🌾 Food Security Ratio (FSR)
+## 🌾 Food Security Ratio (FSR)
 
 Automatically calculate:
 
-- Rice Availability
-- Rice Demand
-- Food Security Ratio
+* Rice Production
+* Estimated Rice Availability
+* Population-Based Rice Demand
+* Food Security Ratio (FSR)
 
-Classification:
+### Food Security Classification
 
-| FSR | Status |
-|------|---------|
-| ≥ 1.20 | 🟢 Safe |
-| 1.00 – <1.20 | 🟡 Alert |
-| <1.00 | 🔴 Critical |
-
----
-
-### 🗺 Interactive Map
-
-Display district-level food security conditions using an interactive map.
-
-Features:
-
-- Choropleth Map
-- Color-based Risk Classification
-- Popup Information
-- Zoom & Navigation
+| Food Security Ratio (FSR) | Status      |
+| ------------------------: | :---------- |
+|                    ≥ 1.20 | 🟢 Safe     |
+|             1.00 – < 1.20 | 🟡 Alert    |
+|                    < 1.00 | 🔴 Critical |
 
 ---
 
-### 📊 Interactive Dashboard
+## 🗺 Interactive GIS Dashboard
 
-Visualize:
+Visualize district-level food security conditions through an interactive map.
 
-- Production Trends
-- Forecast Results
-- Exogenous Variables
-- Food Security Status
-- District Comparison
-- Monthly Analysis
+Features include:
+
+* Choropleth Map
+* Risk-Based Color Classification
+* Interactive Pop-up Information
+* Zoom & Navigation
+* District Filtering
 
 ---
 
-### 📥 Export Result
+## 📊 Interactive Analytics Dashboard
 
-Users can export:
+Dashboard modules include:
 
-- Forecast Results
-- Food Security Reports
-- Charts
-- Tables
+* Historical Production Trends
+* Forecast Results
+* Exogenous Variable Monitoring
+* Food Security Status
+* District Comparison
+* Monthly Time Series Analysis
+* Model Performance Evaluation
+
+---
+
+## 📥 Export & Reporting
+
+Generate downloadable outputs including:
+
+* Forecast Results
+* Food Security Reports
+* Charts
+* Summary Tables
 
 ---
 
@@ -96,153 +100,185 @@ Users can export:
 
 ## 1. SARIMAX
 
-Seasonal AutoRegressive Integrated Moving Average with Exogenous Variables
+Seasonal AutoRegressive Integrated Moving Average with Exogenous Variables.
 
-Exogenous Variables:
+### Exogenous Variables
 
-- NDVI
-- Rainfall
-- Soil Moisture
-- Air Temperature
+* NDVI (Normalized Difference Vegetation Index)
+* Rainfall
+* Air Temperature
+* Soil Moisture
 
 ---
 
 ## 2. Hierarchical Bayesian Time Series (HBTS)
 
-Hierarchical Bayesian model with partial pooling across districts.
+A Bayesian hierarchical model that applies **partial pooling** across districts/cities to improve forecasting performance.
 
-Advantages:
+### Advantages
 
-- Probabilistic Forecast
-- Credible Interval
-- Uncertainty Estimation
-- Information Sharing Between Districts
+* Probabilistic Forecasting
+* Credible Intervals
+* Uncertainty Quantification
+* Information Sharing Across Districts
+* Improved Forecast Stability for Limited Data
 
 ---
 
 # 📂 Dataset
 
-The system uses historical data collected from several official sources.
+The project utilizes integrated datasets collected from multiple official and open-access sources.
 
-### Rice Production
+## 🌾 Rice Production
 
-- Monthly Rice Production
-- District/City Level
-- 2018–2024
+**Level:** District/City (Monthly)
 
-Source:
-- BPS (Statistics Indonesia)
+**Period:** January 2018 – April 2026
 
----
+**Source:**
 
-### Exogenous Variables
-
-- NDVI
-- Rainfall
-- Air Temperature
-- Soil Moisture
-
-Sources:
-
-- Google Earth Engine
-- CHIRPS
-- NASA POWER
+* Badan Pusat Statistik (BPS)
 
 ---
 
-### Population
+## 🌍 Environmental (Exogenous) Variables
 
-District Population
+Monthly environmental indicators extracted from satellite and climate datasets:
 
-Source:
+* NDVI
+* Rainfall
+* Air Temperature
+* Soil Moisture
 
-- BPS
+**Sources**
+
+* Google Earth Engine (GEE)
+* CHIRPS
+* NASA POWER
 
 ---
 
-### Rice Consumption
+## 👥 Population Data
 
-Average Rice Consumption per Capita
+**Level:** District/City (Annual)
 
-Source:
+**Period:** 2018–2026
 
-- SUSENAS / BPS
+**Source**
+
+* Badan Pusat Statistik (BPS)
+
+---
+
+## 🍚 Rice Consumption
+
+Average annual rice consumption per capita.
+
+**Period:** 2018–2025
+
+**Source**
+
+* SUSENAS
+* Badan Pusat Statistik (BPS)
+
+---
+
+# 🧹 Data Preparation Pipeline
+
+The master dataset is constructed through several preprocessing stages:
+
+* Data Collection
+* Data Cleaning
+* Missing Value Handling
+* Duplicate Checking
+* District Name Standardization
+* Dataset Validation
+* Data Integration
+* Master Dataset Construction
+
+The resulting master dataset consists of:
+
+* **38 Districts/Cities**
+* **3,800 Monthly Observations**
+* Integrated production, environmental, demographic, and consumption variables.
 
 ---
 
 # 🏗 System Architecture
 
-```
+```text
                     React Dashboard
                            │
-                           │ REST API
-                           ▼
-                      FastAPI Backend
+                    RESTful API
                            │
-        ┌──────────────────┼─────────────────┐
-        ▼                  ▼                 ▼
-     SARIMAX            HBTS           Data Processing
-        │                  │                 │
-        └──────────────────┼─────────────────┘
+                           ▼
+                    FastAPI Backend
+                           │
+      ┌────────────────────┼────────────────────┐
+      ▼                    ▼                    ▼
+   SARIMAX              HBTS            Data Processing
+      │                    │                    │
+      └────────────────────┼────────────────────┘
                            ▼
                     Master Dataset
+                           │
+                           ▼
+               Food Security Early Warning
 ```
 
 ---
 
-# 🛠 Tech Stack
+# 🛠 Technology Stack
 
 ## Frontend
 
-- React
-- Tailwind CSS
-- Plotly.js
-- React Leaflet
-- Axios
+* React
+* Tailwind CSS
+* Plotly.js
+* React Leaflet
+* Axios
 
 ---
 
 ## Backend
 
-- FastAPI
-- Python
+* FastAPI
+* Python
 
 ---
 
-## Data Science
+## Data Science & Machine Learning
 
-- Pandas
-- NumPy
-- Scikit-Learn
-- Statsmodels
-- PyMC
-- ArviZ
-
----
-
-## Visualization
-
-- Plotly
-- Leaflet
-- GeoJSON
+* Pandas
+* NumPy
+* Statsmodels
+* PyMC
+* ArviZ
+* Scikit-Learn
 
 ---
 
-## Development
+## Data Visualization
 
-- Git
-- GitHub
-- VS Code
-- Jupyter Notebook
+* Plotly
+* Leaflet
+* GeoJSON
+
+---
+
+## Development Tools
+
+* Git
+* GitHub
+* Visual Studio Code
+* Jupyter Notebook
 
 ---
 
 # 📁 Project Structure
 
-```
+```text
 food-security-ews-jatim/
-
-│
 
 ├── app/
 │   ├── backend/
@@ -281,11 +317,14 @@ food-security-ews-jatim/
 
 # 🔄 Workflow
 
-```
+```text
 Raw Data
       │
       ▼
 Data Cleaning
+      │
+      ▼
+Data Validation
       │
       ▼
 Master Dataset
@@ -303,10 +342,10 @@ SARIMAX Model
 HBTS Model
       │
       ▼
-Forecast
+Forecasting
       │
       ▼
-Food Security Ratio
+Food Security Ratio (FSR)
       │
       ▼
 Early Warning Classification
@@ -319,109 +358,123 @@ Interactive Dashboard
 
 # 📊 Dashboard Modules
 
-- Home
-- Overview
-- Rice Production
-- Forecast
-- Early Warning
-- Interactive Map
-- District Analysis
-- Model Comparison
-- Download Report
+* Home
+* Overview
+* Rice Production
+* Forecasting
+* Early Warning
+* Interactive Map
+* District Analysis
+* Model Comparison
+* Download Report
 
 ---
 
 # 📅 Development Roadmap
 
-## Phase 1
+## Phase 1 — Research & Planning
 
-- [x] Literature Review
-- [x] Proposal
-- [x] Dataset Collection
-
----
-
-## Phase 2
-
-- [ ] Data Cleaning
-- [ ] Master Dataset
-- [ ] Exploratory Data Analysis
+* [x] Literature Review
+* [x] Proposal Development
+* [x] Dataset Collection
 
 ---
 
-## Phase 3
+## Phase 2 — Data Engineering
 
-- [ ] SARIMAX Development
-- [ ] HBTS Development
-- [ ] Model Evaluation
-
----
-
-## Phase 4
-
-- [ ] FastAPI Backend
-- [ ] React Frontend
-- [ ] Interactive Dashboard
+* [x] Data Cleaning
+* [x] Data Validation
+* [x] Master Dataset Construction
+* [ ] Exploratory Data Analysis
+* [ ] Feature Engineering
 
 ---
 
-## Phase 5
+## Phase 3 — Forecasting Models
 
-- [ ] Deployment
-- [ ] Documentation
-- [ ] Final Report
+* [ ] SARIMAX Development
+* [ ] Hierarchical Bayesian Time Series Development
+* [ ] Model Evaluation
+
+---
+
+## Phase 4 — Web Application
+
+* [ ] FastAPI Backend
+* [ ] React Frontend
+* [ ] Interactive Dashboard
+* [ ] GIS Visualization
+
+---
+
+## Phase 5 — Deployment
+
+* [ ] Testing
+* [ ] Documentation
+* [ ] Deployment
+* [ ] Final Thesis
 
 ---
 
 # 👥 Team
 
-**Data Science Undergraduate Program**
+**Bachelor of Data Science**
 
-Telkom University Surabaya
+**Telkom University Surabaya**
 
-Project Members:
+### Project Members
 
-- Alfia Damayanti
-- Auliya Ardhini Putri
-- Ayunda Dewi Agustin
+* Alfia Damayanti
+* Auliya Ardhini Putri
+* Ayunda Dewi Agustin
 
 ---
 
 # 📖 Research
 
-This repository is part of:
+This repository supports the development of:
 
-**Bachelor Thesis**
+## Bachelor's Thesis
 
-> Early Warning System Kerentanan Pangan Berbasis Forecasting Produksi Padi Menggunakan SARIMAX dan Hierarchical Bayesian Time Series di Provinsi Jawa Timur
+**Early Warning System Kerentanan Pangan Berbasis Forecasting Produksi Padi Menggunakan SARIMAX dan Hierarchical Bayesian Time Series di Provinsi Jawa Timur**
 
-and
+---
 
-**Internship Project**
+## Internship Project
 
-Department of Food Security and Agriculture, Surabaya City.
+**Department of Food Security and Agriculture**
+
+Surabaya City Government
 
 ---
 
 # 📜 License
 
-This project is released under the MIT License.
+This project is licensed under the **MIT License**.
 
 ---
 
 # ⭐ Future Development
 
-Potential future improvements include:
+Potential future enhancements include:
 
-- PostgreSQL Integration
-- Docker Deployment
-- Authentication & Authorization
-- Automated Data Pipeline
-- Real-time Weather Integration
-- Multi-Crop Forecasting
-- Cloud Deployment
-- Mobile Responsive Dashboard
+* PostgreSQL Database Integration
+* Docker Containerization
+* Authentication & Authorization
+* Automated Data Pipeline
+* Real-Time Weather Integration
+* Multi-Crop Forecasting
+* Cloud Deployment
+* Mobile-Responsive Dashboard
+* API Documentation
+* Model Monitoring
 
 ---
 
-> Developed with ❤️ using Python, React, FastAPI, and Bayesian Statistics.
+## ❤️ Acknowledgements
+
+This project is developed as part of the Bachelor's Thesis and Internship Program at **Telkom University Surabaya**, with support from the **Department of Food Security and Agriculture, Surabaya City**.
+
+---
+
+> **Developed with Python, FastAPI, React, Bayesian Statistics, and Earth Observation Data for Sustainable Food Security Monitoring.**
